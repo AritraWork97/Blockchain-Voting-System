@@ -18,19 +18,24 @@ WORKDIR /usr/src/onlineballotregulator/
 # Copy our python server over.
 COPY . /usr/src/onlineballotregulator/
 
-RUN apt-get update && \
-    apt-get install -y \
+RUN apt-get update
+
+RUN  apt-get install -y && \
         apt-utils \
         software-properties-common \
         python-software-properties
 
+RUN     add-apt-repository ppa:jonathonf/python-3.6 && \
+        apt-get install -y build-essential python3.6 python3.6-dev python3-pip && \
+        # update pip
+        python3.6 -m pip install pip --upgrade && \
+        python3.6 -m pip install wheel
+
 RUN add-apt-repository -y ppa:ethereum/ethereum
 
 # Install our dependencies
-RUN apt-get update && \
-    apt-get install -y \
+RUN  apt-get install -y  && \
 #        python3 \
-        python3-pip \
         libpq-dev \
         libffi-dev \
         libssl-dev \
