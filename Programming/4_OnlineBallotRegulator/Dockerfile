@@ -22,8 +22,7 @@ COPY . /usr/src/onlineballotregulator/
 RUN apt-get update && \
     apt-get install -y \
         apt-utils \
-        software-properties-common \
-        python-software-properties
+        software-properties-common 
 
 RUN     add-apt-repository ppa:jonathonf/python-3.6 && \
         apt-get install -y build-essential python3.6 python3.6-dev python3-pip && \
