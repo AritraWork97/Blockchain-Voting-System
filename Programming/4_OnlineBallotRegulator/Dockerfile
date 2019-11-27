@@ -18,9 +18,9 @@ WORKDIR /usr/src/onlineballotregulator/
 # Copy our python server over.
 COPY . /usr/src/onlineballotregulator/
 
-RUN apt-get update
 
-RUN  apt-get install -y && \
+RUN apt-get update && \
+    apt-get install -y \
         apt-utils \
         software-properties-common \
         python-software-properties
