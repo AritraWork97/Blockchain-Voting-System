@@ -33,7 +33,8 @@ RUN     add-apt-repository ppa:jonathonf/python-3.6 && \
 RUN add-apt-repository -y ppa:ethereum/ethereum
 
 # Install our dependencies
-RUN  apt-get install -y  && \
+RUN apt-get update && \
+    apt-get install -y \
 #        python3 \
         libpq-dev \
         libffi-dev \
