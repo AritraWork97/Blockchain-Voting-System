@@ -6,7 +6,7 @@
 ##################################################
 
 # Set the base image to ubuntu
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 
 # Do not buffer the output from stdout.
 ENV PYTHONUNBUFFERED 1
